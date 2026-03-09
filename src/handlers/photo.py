@@ -12,7 +12,7 @@ async def process_photo(message: Message) -> None:
     photo = message.photo[-1]
 
     file_info = await message.bot.get_file(photo.file_id)
-    dest = Path("downloads") / str(message.from_user.id) / f"{photo.file_unique_id[:10]}.jpg"
+    dest = Path("downloads") / str(message.from_user.id) / f"{photo.file_unique_id}.jpg"
     dest.parent.mkdir(exist_ok=True)
 
     await message.bot.download_file(file_info.file_path, destination=dest)

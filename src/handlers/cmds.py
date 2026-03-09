@@ -13,7 +13,8 @@ async def process_start(message: Message) -> None:
     if not username:
         await message.answer("⚠️ Не смогли обработать ваше имя.")
         return
-    await message.answer(f"👋 Привет, {message.from_user.username}")
+    await message.answer(f"👋 Привет, {message.from_user.username}. "
+                         f"Используй /help для получения инструкций по использованию бота.")
 
 
 # /help
